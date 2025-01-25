@@ -23,24 +23,24 @@ function App() {
             element={
               <>
                 <Navbar />
-                <Hero />
-                <AboutUs />
-                <Events />
-                <Memories />
-                <Leaders />
-                <Team />
-                <CommentSection />
-                <Sponsors />
+                <div id="hero"><Hero /></div>
+                <div id="about"><AboutUs /></div>
+                <div id="events"><Events /></div>
+                <div id="memories"><Memories /></div>
+                <div id="leaders"><Leaders /></div>
+                <div id="team"><Team /></div>
+                <div id="comments"><CommentSection /></div>
+                <div id="sponsors"><Sponsors /></div>
                 <Footer />
               </>
             }
           />
 
           {/* Route for the single event page */}
-          <Route path="/event" element={<>
+          <Route path="/event/:id" element={<>
             <Navbar />
             <Single_Event />
-            </>} />
+          </>} />
         </Routes>
       </div>
     </Router>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-export function EventCard({ position, title, description, cardTitle, imageUrl }) {
+export function EventCard({ position, title, description, cardTitle, imageUrl ,eventid}) {
     const isReversed = position % 2 !== 0;
 
     // Variants for the animation
@@ -16,7 +16,7 @@ export function EventCard({ position, title, description, cardTitle, imageUrl })
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/event");
+        navigate(`/event/${eventid}`);
     };
 
     return (

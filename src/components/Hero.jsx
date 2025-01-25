@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import back from '../Images/HEROBG.png'; // Ensure the path is correct
+const back = 'https://res.cloudinary.com/dqfihsfd6/image/upload/v1737573987/HEROBG_pvobga.png'; // Ensure the path is correct
 
 const HeroSection = () => {
   const headingText = "Empowering the Future with Blockchain & AI";
