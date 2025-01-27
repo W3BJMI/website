@@ -6,6 +6,13 @@ export function Sponsors(){
     const [isInView, setIsInView] = useState(false);
     const sectionRef = useRef(null);
 
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
     useEffect(() => {
         const currentSection = sectionRef.current;
     
@@ -67,7 +74,7 @@ export function Sponsors(){
             </div>
 
             <div className="text-center mb-8">
-                <button className="px-6 py-2 bg-blueColor text-white rounded-lg shadow-all border-2 border-gray-950 border-spacing-4 hover:shadow-intense transition-all duration-400">
+                <button onClick={() => scrollToSection('comments')} className="px-6 py-2 bg-blueColor text-white rounded-lg shadow-all border-2 border-gray-950 border-spacing-4 hover:shadow-intense transition-all duration-400">
                     Sponsor Us
                 </button>
             </div>

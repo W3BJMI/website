@@ -9,6 +9,27 @@ export default function Events() {
     const [filteredEvents, setFilteredEvents] = useState([]);
     const sectionRef = useRef(null);
 
+    // Function to set toggle to upcoming events
+    const showUpcomingEvents = () => {
+        setIsToggleOn(true);
+    };
+
+    // Effect to handle URL hash for showing upcoming events
+    useEffect(() => {
+        const handleHashChange = () => {
+            if (window.location.hash === '#upcoming-events') {
+                showUpcomingEvents();
+            }
+        };
+
+        // Check hash on mount
+        handleHashChange();
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
     useEffect(() => {
         const currentSection = sectionRef.current;
         if (!currentSection) return;
@@ -91,7 +112,7 @@ export default function Events() {
     const text4 = "and cutting-edge AI sessions.";
 
     return (
-        <section ref={sectionRef} className="bg-black pt-24 text-white w-full pb-10">
+        <section ref={sectionRef} id="events" className="bg-black pt-24 text-white w-full pb-10">
             <div className="font-framer font-bold text-7xl flex justify-center -tracking-[0.09em]">
                 {text1.split("").map((char, i) => (
                     <motion.span key={`${char}-${i}`} custom={i} variants={letterVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block">

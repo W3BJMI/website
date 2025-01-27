@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import logo from "../Images/W3B_LOGO.png";
+const logo =  "https://res.cloudinary.com/dzihypwia/image/upload/v1737871766/W3B_LOGO_r3v890.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const Navbar = () => {
 
       {/* Right Section: Button */}
       <button 
-        onClick={() => scrollToSection('contact')} 
+        onClick={() => scrollToSection('comments')} 
         className="hidden md:block bg-white text-black px-4 py-2 md:py-4 rounded-3xl font-bold hover:bg-purple-700 hover:text-white text-xs md:text-sm"
       >
         Contact Us
@@ -87,7 +87,7 @@ const Navbar = () => {
         <li onClick={() => scrollToSection('comments')} className="hover:text-purple-700 cursor-pointer">Suggestions</li>
         <li>
           <button 
-            onClick={() => scrollToSection('contact')} 
+            onClick={() => scrollToSection('comments')} 
             className="w-full bg-white text-black px-4 py-2 rounded-3xl font-bold hover:bg-purple-700 hover:text-white"
           >
             Contact Us
