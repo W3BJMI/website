@@ -54,6 +54,11 @@ export function CommentSection() {
             if (response.ok) {
                 setStatusMessage('Your message has been sent successfully!');
                 setStatusType('success');
+                
+                // Clear the form fields
+                setName('');
+                setEmail('');
+                setMessage('');
             } else {
                 setStatusMessage(data.error || 'Failed to send email');
                 setStatusType('error');
@@ -116,9 +121,9 @@ export function CommentSection() {
                 {/* Display the status message */}
                 {statusMessage && (
                     <div
-                    className={`mt-4 p-4 text-black font-framer w-[28rem] h-12 rounded-2xl ${
-                        statusType === 'success' ? 'bg-blueColor' : 'bg-red-600'
-                    }`}
+                        className={`mt-4 p-4 text-black font-framer w-[28rem] h-12 rounded-2xl ${
+                            statusType === 'success' ? 'bg-blueColor' : 'bg-red-600'
+                        }`}
                     >
                         {statusMessage}
                     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 const back = 'https://res.cloudinary.com/dqfihsfd6/image/upload/v1737573987/HEROBG_pvobga.png';
 
 const HeroSection = () => {
@@ -7,12 +8,17 @@ const HeroSection = () => {
 
   const scrollToEvents = (e) => {
     e.preventDefault();
-    // Set hash to trigger upcoming events display
-    window.location.hash = 'upcoming-events';
-    // Scroll to events section
+
+    // First update the hash using window.history
+    window.history.pushState(null, '', '#upcoming-events');
+
+    // Then scroll to the events section
     const eventsSection = document.getElementById('events');
     if (eventsSection) {
       eventsSection.scrollIntoView({ behavior: 'smooth' });
+      
+      // Dispatch a custom event to notify the Events component
+      window.dispatchEvent(new CustomEvent('hashchange'));
     }
   };
 

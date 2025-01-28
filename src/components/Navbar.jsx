@@ -1,18 +1,25 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-const logo =  "https://res.cloudinary.com/dzihypwia/image/upload/v1737871766/W3B_LOGO_r3v890.png";
+import { useNavigate, useLocation } from 'react-router-dom';
+const logo = "https://res.cloudinary.com/dzihypwia/image/upload/v1737871766/W3B_LOGO_r3v890.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  function scrollToSection(sectionId) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+  const handleNavigation = (sectionId) => {
+    if (location.pathname === '/') {
+      // On home page - scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // On other pages - navigate to home page with section hash
+      navigate(`/#${sectionId}`);
     }
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <div className="sticky top-0 bg-black text-white px-6 md:px-14 py-4 flex items-center justify-between z-50">
@@ -33,11 +40,11 @@ const Navbar = () => {
 
       {/* Middle Section: Links */}
       <ul className="hidden md:flex space-x-6 lg:space-x-14 text-sm md:text-lg -ml-10 md:-ml-16">
-        <li onClick={() => scrollToSection('about')} className="hover:text-purple-700 cursor-pointer">About Us</li>
-        <li onClick={() => scrollToSection('events')} className="hover:text-purple-700 cursor-pointer">Events</li>
-        <li onClick={() => scrollToSection('team')} className="hover:text-purple-700 cursor-pointer">Team</li>
-        <li onClick={() => scrollToSection('memories')} className="hover:text-purple-700 cursor-pointer">Gallery</li>
-        <li onClick={() => scrollToSection('comments')} className="hover:text-purple-700 cursor-pointer">Suggestions</li>
+        <li onClick={() => handleNavigation('about')} className="hover:text-purple-700 cursor-pointer">About Us</li>
+        <li onClick={() => handleNavigation('events')} className="hover:text-purple-700 cursor-pointer">Events</li>
+        <li onClick={() => handleNavigation('team')} className="hover:text-purple-700 cursor-pointer">Team</li>
+        <li onClick={() => handleNavigation('memories')} className="hover:text-purple-700 cursor-pointer">Gallery</li>
+        <li onClick={() => handleNavigation('comments')} className="hover:text-purple-700 cursor-pointer">Suggestions</li>
       </ul>
 
       {/* Mobile Menu Button */}
@@ -65,7 +72,7 @@ const Navbar = () => {
 
       {/* Right Section: Button */}
       <button 
-        onClick={() => scrollToSection('comments')} 
+        onClick={() => handleNavigation('comments')} 
         className="hidden md:block bg-white text-black px-4 py-2 md:py-4 rounded-3xl font-bold hover:bg-purple-700 hover:text-white text-xs md:text-sm"
       >
         Contact Us
@@ -80,14 +87,14 @@ const Navbar = () => {
           isMobileMenuOpen ? 'block' : 'hidden'
         } absolute top-16 left-0 w-full bg-black text-white py-4 px-6 space-y-4 text-sm z-50`}
       >
-        <li onClick={() => scrollToSection('about')} className="hover:text-purple-700 cursor-pointer">About Us</li>
-        <li onClick={() => scrollToSection('events')} className="hover:text-purple-700 cursor-pointer">Events</li>
-        <li onClick={() => scrollToSection('team')} className="hover:text-purple-700 cursor-pointer">Team</li>
-        <li onClick={() => scrollToSection('memories')} className="hover:text-purple-700 cursor-pointer">Gallery</li>
-        <li onClick={() => scrollToSection('comments')} className="hover:text-purple-700 cursor-pointer">Suggestions</li>
+        <li onClick={() => handleNavigation('about')} className="hover:text-purple-700 cursor-pointer">About Us</li>
+        <li onClick={() => handleNavigation('events')} className="hover:text-purple-700 cursor-pointer">Events</li>
+        <li onClick={() => handleNavigation('team')} className="hover:text-purple-700 cursor-pointer">Team</li>
+        <li onClick={() => handleNavigation('memories')} className="hover:text-purple-700 cursor-pointer">Gallery</li>
+        <li onClick={() => handleNavigation('comments')} className="hover:text-purple-700 cursor-pointer">Suggestions</li>
         <li>
           <button 
-            onClick={() => scrollToSection('comments')} 
+            onClick={() => handleNavigation('comments')} 
             className="w-full bg-white text-black px-4 py-2 rounded-3xl font-bold hover:bg-purple-700 hover:text-white"
           >
             Contact Us

@@ -9,25 +9,37 @@ export default function Events() {
     const [filteredEvents, setFilteredEvents] = useState([]);
     const sectionRef = useRef(null);
 
-    // Function to set toggle to upcoming events
     const showUpcomingEvents = () => {
         setIsToggleOn(true);
+        window.history.pushState(null, '', '#upcoming-events');
+    };
+    
+    const showPreviousEvents = () => {
+        setIsToggleOn(false);
+        window.history.pushState(null, '', '#previous-events');
     };
 
-    // Effect to handle URL hash for showing upcoming events
     useEffect(() => {
         const handleHashChange = () => {
-            if (window.location.hash === '#upcoming-events') {
-                showUpcomingEvents();
+            const hash = window.location.hash;
+            if (hash === '#upcoming-events') {
+                setIsToggleOn(true);
+            } else if (hash === '#previous-events') {
+                setIsToggleOn(false);
             }
         };
 
-        // Check hash on mount
+        // Check hash on mount and handle initial state
         handleHashChange();
 
-        // Listen for hash changes
+        // Listen for both popstate and hashchange events
+        window.addEventListener('popstate', handleHashChange);
         window.addEventListener('hashchange', handleHashChange);
-        return () => window.removeEventListener('hashchange', handleHashChange);
+        
+        return () => {
+            window.removeEventListener('popstate', handleHashChange);
+            window.removeEventListener('hashchange', handleHashChange);
+        };
     }, []);
 
     useEffect(() => {
@@ -61,25 +73,27 @@ export default function Events() {
         const currentDate = new Date();
         const filtered = eventData.filter(event => {
             const eventDate = new Date(event.formDeadline);
-            return isToggleOn 
+            return isToggleOn
                 ? eventDate >= currentDate // Upcoming events
-                : eventDate < currentDate;  // Previous events
+                : eventDate < currentDate; // Previous events
         });
 
         // Sort events by date
         filtered.sort((a, b) => {
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
-            return isToggleOn 
-                ? dateA - dateB     // Ascending for upcoming
-                : dateB - dateA;    // Descending for previous
+            return isToggleOn
+                ? dateA - dateB // Ascending for upcoming
+                : dateB - dateA; // Descending for previous
         });
 
         setFilteredEvents(filtered);
     }, [eventData, isToggleOn]);
 
     const toggleSwitch = () => {
-        setIsToggleOn(prev => !prev);
+        const newState = !isToggleOn;
+        setIsToggleOn(newState);
+        window.history.pushState(null, '', newState ? '#upcoming-events' : '#previous-events');
     };
 
     const letterVariants = {
@@ -142,7 +156,7 @@ export default function Events() {
                 ))}
             </div>
             <div className="flex justify-center pt-4 text-2xl font-semibold">
-                <div className={`mr-3 pt-3 ${!isToggleOn ? 'text-purple-600' : 'text-white'}`}>
+                <div className={`mr-3 pt-3 cursor-pointer ${!isToggleOn ? 'text-purple-600' : 'text-white'}`} onClick={showPreviousEvents}>
                     Previous Events
                 </div>
                 <div onClick={toggleSwitch} className={`mr-3 w-32 h-14 flex items-center rounded-full p-1 cursor-pointer ${isToggleOn ? "bg-purple-600" : "bg-gray-300"}`}>
@@ -154,7 +168,7 @@ export default function Events() {
                         animate={{ x: isToggleOn ? 72 : 0 }}
                     />
                 </div>
-                <div className={`pt-3 ${isToggleOn ? 'text-purple-600' : 'text-white'}`}>
+                <div className={`pt-3 cursor-pointer ${isToggleOn ? 'text-purple-600' : 'text-white'}`} onClick={showUpcomingEvents}>
                     Upcoming Events
                 </div>
             </div>

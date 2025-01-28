@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import AboutUs from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -12,9 +12,28 @@ import { Sponsors } from "./components/Sponsors";
 import { Footer } from "./components/Footer";
 import Single_Event from "./components/Single_Event";
 
+// Scroll to section if hash is present
+function ScrollToSection() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToSection />
       <div className="App overflow-x-hidden">
         <Routes>
           {/* Route for the landing page with all components */}
