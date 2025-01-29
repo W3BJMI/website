@@ -72,12 +72,12 @@ export function CommentSection() {
 
     return (
         <div className="bg-black flex flex-col md:flex-row justify-evenly pb-28 md:pb-10 pt-40">
-            <div className="relative w-[80%] font-framer text-8xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
+            <div className="relative w-[100%] font-framer text-8xl md:text-[156px] bg-black mb-28 pb-36 md:pb-80"> 
                 <div className='flex justify-center'>
                     <div className="absolute text-white top-0">
                         Let's
                     </div>
-                    <div className="absolute text-blueColor top-[90px] md:top-[106px]">
+                    <div className="absolute text-blueColor top-[66px] md:top-[106px]">
                         Talk!
                     </div>
                 </div>
