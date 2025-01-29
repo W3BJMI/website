@@ -75,54 +75,31 @@ export function Memories() {
 
     const text1 = "Moments That";
     const text2 = "Matter";
-    const text3 = "Celebrate the spirit of our community through snapshots of joy,";
-    const text4 = "collaboration, and unforgettable events. Join us and create memories";
-    const text5 = "together!";
+    const text3 = "Celebrate the spirit of our community through snapshots of joy, collaboration, and unforgettable events. Join us and create memories together!";
 
     return (
-        <section ref={sectionRef} className="bg-black pb-[32rem] overflow-hidden">
+        <section ref={sectionRef} className="bg-black pb-32 md:pb-[22rem] overflow-hidden">
             <div className="flex justify-center w-full text-7xl font-bold -tracking-[0.07em] pb-3">
-                <div className="text-white">
-                    {text1.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
-                            {word}
-                        </motion.span>
-                    ))}
-                </div>
-                <div className="ml-5" style={{ color: 'rgba(123, 0, 255, 1)' }}>
-                    {text2.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
+                <div className="text-white text-center max-w-[95%]">
+                    {[...text1.split(" "),...text2.split(" ")].map((word, i) => (
+                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className={`inline-block mr-2 ${ text2.includes(word) ? "ml-2 text-blueColor" : "" }`}>
                             {word}
                         </motion.span>
                     ))}
                 </div>
             </div>
-            <div className="text-white text-[18px]">
-                <div className="flex justify-center mb-0">
+            <div className="text-white text-[16px] md:text-[18px] flex justify-center">
+                <p className="mb-0 text-center max-w-[90%] md:w-[50rem]">
                     {text3.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
+                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1 leading-relaxed">
                             {word}
                         </motion.span>
                     ))}
-                </div>
-                <div className="flex justify-center">
-                    {text4.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
-                            {word}
-                        </motion.span>
-                    ))}
-                </div>
-                <div className="flex justify-center">
-                    {text5.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
-                            {word}
-                        </motion.span>
-                    ))}
-                </div>
+                </p>
             </div>
 
             {/* Gallery */}
-            <div className="relative bg-black w-5/12 h-32 pt-8">
+            <div className="relative bg-black md:w-5/12 md:h-32 pt-8">
                 <div className="flex animate-scroll" style={{ whiteSpace: "nowrap" }}>
                     {/* Map over the most recent 5 dates' images */}
                     {galleryImages.length > 0 ? (
@@ -130,7 +107,7 @@ export function Memories() {
                             <img
                                 key={index}
                                 src={src}
-                                alt={`Gallery Image ${index + 1}`}
+                                alt={`Gallery ${index + 1}`}
                                 className="w-full flex-shrink-0 object-cover rounded-[48px] px-2"
                             />
                         ))

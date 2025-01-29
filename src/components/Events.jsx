@@ -122,44 +122,38 @@ export default function Events() {
 
     const text1 = "WHATS";
     const text2 = "Happening...";
-    const text3 = "Dive into a dynamic blend of gaming tournaments, Web3 advancements,";
-    const text4 = "and cutting-edge AI sessions.";
+    const text3 = "Dive into a dynamic blend of gaming tournaments, Web3 advancements, and cutting-edge AI sessions.";
 
     return (
         <section ref={sectionRef} id="events" className="bg-black pt-24 text-white w-full pb-10">
-            <div className="font-framer font-bold text-7xl flex justify-center -tracking-[0.09em]">
+            <div className="font-framer font-bold text-6xl md:text-7xl flex justify-center -tracking-[0.07em]">
                 {text1.split("").map((char, i) => (
                     <motion.span key={`${char}-${i}`} custom={i} variants={letterVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block">
                         {char}
                     </motion.span>
                 ))}
             </div>
-            <div className="font-framer font-bold text-7xl flex justify-center -tracking-[0.09em]" style={{ color: 'rgba(123, 0, 255, 1)' }}>
+            <div className="font-framer font-bold text-6xl md:text-7xl flex justify-center -tracking-[0.07em]" style={{ color: 'rgba(123, 0, 255, 1)' }}>
                 {text2.split("").map((char, i) => (
                     <motion.span key={`${char}-${i}`} custom={i} variants={letterVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block">
                         {char}
                     </motion.span>
                 ))}
             </div>
-            <div className="flex justify-center pt-6 text-lg">
-                {text3.split(" ").map((word, i) => (
-                    <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
-                        {word}
-                    </motion.span>
-                ))}
-            </div>
-            <div className="flex justify-center text-lg">
-                {text4.split(" ").map((word, i) => (
-                    <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1">
-                        {word}
-                    </motion.span>
-                ))}
+            <div className='flex justify-center'>
+                <p className="text-center leading-relaxed max-w-[90%] pt-6 text-base md:text-lg whitespace-normal text-wrap">
+                    {text3.split(" ").map((word, i) => (
+                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1 ">
+                            {word}
+                        </motion.span>
+                    ))}
+                </p>
             </div>
             <div className="flex justify-center pt-4 text-2xl font-semibold">
-                <div className={`mr-3 pt-3 cursor-pointer ${!isToggleOn ? 'text-purple-600' : 'text-white'}`} onClick={showPreviousEvents}>
+                <div className={`md:mr-3 pt-3 cursor-pointer ${!isToggleOn ? 'text-purple-600' : 'text-white'}`} onClick={showPreviousEvents}>
                     Previous Events
                 </div>
-                <div onClick={toggleSwitch} className={`mr-3 w-32 h-14 flex items-center rounded-full p-1 cursor-pointer ${isToggleOn ? "bg-purple-600" : "bg-gray-300"}`}>
+                <div onClick={toggleSwitch} className={`mr-6 md:mr-3 w-52 md:w-32 h-14 flex items-center rounded-full p-1 cursor-pointer ${isToggleOn ? "bg-purple-600" : "bg-gray-300"}`}>
                     <motion.div
                         className={`w-12 h-12 rounded-full ${isToggleOn ? "bg-white" : "bg-purple-700"}`}
                         layout
@@ -188,7 +182,7 @@ export default function Events() {
                     ))
                 ) : (
                     <div className="text-center mt-8 text-gray-400">
-                        No {isToggleOn ? 'upcoming' : 'previous'} events found
+                        No {isToggleOn ? 'Upcoming' : 'Previous'} events found
                     </div>
                 )}
             </div>

@@ -26,6 +26,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         custom: ['YourCustomFont', 'sans-serif'],
         framer: ['Unbounded', 'Unbounded Placeholder', 'sans-serif'],
+        montserrat: ["Montserrat", "sans-serif"],
       },
       animation: {
         scroll: 'scroll 15s linear infinite', // Define the animation

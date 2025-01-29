@@ -71,16 +71,16 @@ export function CommentSection() {
     };
 
     return (
-        <div className="bg-black flex justify-evenly pb-16 pt-24">
-            <div className="relative font-framer text-[156px] bg-black pb-80"> 
+        <div className="bg-black flex flex-col md:flex-row justify-evenly pb-28 md:pb-10 pt-40">
+            <div className="relative font-framer text-9xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
                 <div className="absolute text-white top-0">
                     Let's
                 </div>
-                <div className="absolute text-blueColor top-[106px]">
+                <div className="absolute text-blueColor top-[90px] md:top-[106px]">
                     Talk!
                 </div>
             </div>
-            <div className="relative text-white font-framer ml-96">
+            <div className="relative text-white font-framer md:ml-96">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <input
@@ -88,7 +88,7 @@ export function CommentSection() {
                             placeholder="Name"
                             value={name}
                             onChange={handleNameChange}
-                            className="bg-zinc-600 focus:outline-none w-[28rem] h-12 pl-4 rounded-2xl"
+                            className="bg-zinc-600 focus:outline-none w-[98vw] md:w-[28rem] h-12 pl-4 rounded-2xl"
                         />
                     </div>
                     <div className="mb-4">
@@ -97,7 +97,7 @@ export function CommentSection() {
                             placeholder="Email"
                             value={email}
                             onChange={handleEmailChange}
-                            className="bg-zinc-600 focus:outline-none w-[28rem] h-12 pl-4 rounded-2xl"
+                            className="bg-zinc-600 focus:outline-none w-[98vw] md:w-[28rem] h-12 pl-4 rounded-2xl"
                         />
                     </div>
                     <div className="mb-2">
@@ -105,13 +105,13 @@ export function CommentSection() {
                             placeholder="Message"
                             value={message}
                             onChange={handleMessageChange}
-                            className="bg-zinc-600 min-h-32 pt-3 pr-4 max-h-72 focus:outline-none w-[28rem] h-12 pl-4 rounded-2xl"
+                            className="bg-zinc-600 min-h-32 pt-3 pr-4 max-h-72 focus:outline-none w-[98vw] md:w-[28rem] h-12 pl-4 rounded-2xl"
                         />
                     </div>
                     <div className="text-black font-semibold">
                         <button
                             type="submit"
-                            className="bg-blueColor font-framer w-[28rem] h-12 rounded-2xl"
+                            className="bg-blueColor font-framer w-[98vw] md:w-[28rem] h-12 rounded-2xl"
                         >
                             Send
                         </button>
@@ -121,7 +121,7 @@ export function CommentSection() {
                 {/* Display the status message */}
                 {statusMessage && (
                     <div
-                        className={`mt-4 p-4 text-black font-framer w-[28rem] h-12 rounded-2xl ${
+                        className={`mt-4 p-4 text-black font-framer w-[98vw] md:w-[28rem] h-12 rounded-2xl ${
                             statusType === 'success' ? 'bg-blueColor' : 'bg-red-600'
                         }`}
                     >

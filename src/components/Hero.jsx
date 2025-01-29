@@ -25,7 +25,7 @@ const HeroSection = () => {
   const splitWords = (text) => text.split(" ");
 
   return (
-    <div className="relative bg-black text-white min-h-screen flex flex-col items-center justify-start p-10 overflow-hidden font-poppins">
+    <div className="relative bg-black text-white min-h-screen flex flex-col items-center justify-start px-10 pb-10 md:p-10 overflow-hidden font-poppins">
       <motion.div
         className="absolute inset-0 flex"
         initial={{ opacity: 0 }}
@@ -114,7 +114,7 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.p
-          className="text-lg md:text-4xl text-gray-300 mb-20 font-inter"
+          className="text-lg md:text-4xl text-gray-300 mb-10 md:mb-20 font-inter"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
@@ -123,7 +123,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          className="flex justify-center gap-4"
+          className="flex flex-col md:flex-row justify-center items-center gap-4"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1.5 }}

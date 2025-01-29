@@ -3,7 +3,7 @@
 export function MemberCard({ designation, name, image }){
 
     return (
-        <div className="ml-10 mt-20 group relative w-96 h-[29rem] overflow-hidden bg-black rounded-lg shadow-lg cursor-pointer border-x-2 border-slate-700">
+        <div className="ml-10 md:ml-10 mt-20 group relative w-80 h-[29rem] md:w-96 md:h-[29rem] overflow-hidden bg-black rounded-lg shadow-lg cursor-pointer border-x-2 border-slate-700">
             <div className="relative border-yellow-500 border-4">
                 <img src={image} alt="Profile" className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 p-0 m-0" />
                 <div className="absolute top-4 right-2 bg-white text-black text-sm font-bold px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition duration-500">

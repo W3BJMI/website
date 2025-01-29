@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 bg-black text-white px-6 md:px-14 py-4 flex items-center justify-between z-50">
+    <div className="sticky top-0 bg-black text-white pl-3 pr-6 md:px-14 py-4 flex items-center justify-between z-50">
       {/* Left Section: Logo */}
       <div 
         className="flex items-center space-x-3 cursor-pointer" 
@@ -31,10 +31,10 @@ const Navbar = () => {
         <img
           src={logo}
           alt="W3B Logo"
-          className="w-16 h-12 md:w-20 md:h-15"
+          className="w-14 h-12 md:w-20"
         />
         <div>
-          <h1 className="text-2xl md:text-4xl text-purple-500 font-bold">W3B</h1>
+          <h1 className="text-2xl md:text-4xl text-purple-500 font-semibold font-montserrat ">W3B</h1>
         </div>
       </div>
 
@@ -73,10 +73,10 @@ const Navbar = () => {
       {/* Right Section: Button */}
       <button 
         onClick={() => handleNavigation('comments')} 
-        className="hidden md:block bg-white text-black px-4 py-2 md:py-4 rounded-3xl font-bold hover:bg-purple-700 hover:text-white text-xs md:text-sm"
+        className="hidden md:block h-auto bg-white text-black px-4 py-2 md:py-4 rounded-3xl font-montserrat font-bold hover:bg-purple-700 hover:text-white text-xs md:text-sm"
       >
         Contact Us
-        <span className="bg-black text-white rounded-full px-2 py-1 ml-2">
+        <span className="bg-black text-white rounded-full px-2.5 py-2 ml-2 ">
           &rarr;
         </span>
       </button>
