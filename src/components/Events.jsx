@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { EventCard } from "./EventCard";
 
 export default function Events() {
@@ -42,18 +42,30 @@ export default function Events() {
         };
     }, []);
 
+    const observerCallback = useCallback(([entry]) => {
+        if (isInView !== entry.isIntersecting) {
+            setIsInView(entry.isIntersecting);
+        }
+    }, [isInView]);
+
+    // useEffect(() => {
+    //     const currentSection = sectionRef.current;
+    //     if (!currentSection) return;
+
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => setIsInView(entry.isIntersecting),
+    //         { threshold: 0.1 }
+    //     );
+
+    //     observer.observe(currentSection);
+    //     return () => observer.disconnect();
+    // }, []);
+
     useEffect(() => {
-        const currentSection = sectionRef.current;
-        if (!currentSection) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => setIsInView(entry.isIntersecting),
-            { threshold: 0.1 }
-        );
-
-        observer.observe(currentSection);
+        const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 });
+        if (sectionRef.current) observer.observe(sectionRef.current);
         return () => observer.disconnect();
-    }, []);
+    }, [observerCallback]);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -102,22 +114,22 @@ export default function Events() {
             opacity: 1,
             y: 0,
             transition: {
-                // delay: i * 0.05,
-                duration: 2,
+                delay: i * 0.05,
+                duration: 0.7,
             },
         }),
     };
 
     const wordVariants = {
         hidden: { opacity: 0, y: 20 },
-        visible: {
+        visible: (i) => ({
             opacity: 1,
             y: 0,
             transition: {
-                // delay: i * 0.09,
-                duration: 2,
+                delay: i * 0.09,
+                duration: 0.7,
             },
-        },
+        }),
     };
 
     const text1 = "WHATS";
