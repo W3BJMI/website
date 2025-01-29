@@ -89,7 +89,7 @@ export function Footer() {
                 </div>
             </div>
             <div className="flex justify-center border-t-2 border-zinc-800 items-center h-14">
-                <div className="text-gray-400 text-sm font-semibold text-center">
+                <div className="text-gray-400 text-sm font-semibold text-center font-montserrat">
                     &copy; {currentYear} W3B
                 </div>
                 {/* <div className="flex justify-between text-gray-400 pt-5 pr-16 font-semibold">

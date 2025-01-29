@@ -7,8 +7,6 @@ export function Leaders(){
     const sectionRef = useRef(null);
 
     useEffect(() => {
-        const img = new Image();
-        img.src = "/faculty_advisor.avif";
 
         const currentSection = sectionRef.current;
     
@@ -82,11 +80,12 @@ export function Leaders(){
                     <div className="absolute bottom-8 sm:bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-[200px] sm:w-[300px] h-[200px] sm:h-[300px] rounded-full bg-purple-700 z-0"></div>
 
                     {/* Image */}
-                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={imageVariants}>
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={imageVariants}>
                         <img
                             src="/faculty_advisor.avif"
                             alt="Faculty Advisor"
                             className="relative z-10 w-[200px] sm:w-[250px] h-auto mx-auto rounded-b-[60px] filter grayscale"
+                            loading="eager"
                         />
                     </motion.div>
 

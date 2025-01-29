@@ -69,7 +69,7 @@ const AboutUs = () => {
           className="mt-4 text-lg md:text-xl px-96 text-gray-300 w-[72rem] md:w-[92rem]"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.5, delay: 0.5 }}
+          transition={{ duration: 1.5 }}
         >
           Empowering students to explore, innovate, and excel in the world of
           Web3 and decentralized technologies.
@@ -103,7 +103,7 @@ const AboutUs = () => {
           className="relative flex items-center"
           initial={{ opacity: 0, x: 100 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 2 }}
         >
           <div className="absolute w-1 bg-purple-500 h-full top-0 left-10"></div>
           <div className="relative bg-gradient-to-r from-[#2e2e2e]/50 to-[#1a1a1a]/40 rounded-3xl p-8 w-[80%] md:w-[620px] text-left shadow-lg ml-20">
