@@ -114,7 +114,7 @@ export default function Events() {
             opacity: 1,
             y: 0,
             transition: {
-                delay: i * 0.05,
+                delay: i * 0.02,
                 duration: 0.7,
             },
         }),
@@ -126,7 +126,7 @@ export default function Events() {
             opacity: 1,
             y: 0,
             transition: {
-                delay: i * 0.09,
+                delay: i * 0.05,
                 duration: 0.7,
             },
         }),
