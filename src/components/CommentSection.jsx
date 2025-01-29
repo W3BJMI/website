@@ -72,15 +72,17 @@ export function CommentSection() {
 
     return (
         <div className="bg-black flex flex-col md:flex-row justify-evenly pb-28 md:pb-10 pt-40">
-            <div className="relative flex justify-center w-[100%] font-framer text-8xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
-                <div className="absolute text-white top-0">
-                    Let's
-                </div>
-                <div className="absolute text-blueColor top-[90px] md:top-[106px]">
-                    Talk!
+            <div className="relative w-[80%] font-framer text-8xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
+                <div className='flex justify-center'>
+                    <div className="absolute text-white top-0">
+                        Let's
+                    </div>
+                    <div className="absolute text-blueColor top-[90px] md:top-[106px]">
+                        Talk!
+                    </div>
                 </div>
             </div>
-            <div className="relative text-white font-framer md:ml-96">
+            <div className="relative text-white font-framer md:mr-56 md:ml-10">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <input

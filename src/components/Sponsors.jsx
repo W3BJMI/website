@@ -50,7 +50,7 @@ export function Sponsors(){
     return (
         <section ref={sectionRef} className="bg-black text-white pt-10 pb-28">
             <div className="text-center mb-14">
-                <h2 className="text-6xl md:text-8xl font-framer font-bold text-center max-w-[90%] mb-6">
+                <h2 className="text-6xl md:text-8xl font-framer font-bold text-center max-w-[90%] md:max-w-[100%] mb-6">
                     {[...text1.split(" "),...text2.split(" ")].map((word, i) => (
                         <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className={`inline-block px-4 ${ text2.includes(word) ? "text-blueColor" : "" }`} >
                             {word}
