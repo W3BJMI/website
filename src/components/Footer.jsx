@@ -41,10 +41,10 @@ export function Footer() {
                                 className="bg-black h-10 pl-2 pt-3 focus:outline-none text-sm w-64"
                             />
                         </div>
-                        <div className="pt-1.5 md:pt-1">
+                        <div className="pt-1 md:pt-1 flex justify-end w-[96vw] h-12 md:h-12">
                             <button 
                                 onClick={handleSubscribe}
-                                className="px-2 py-2 mr-1 w-28 text-sm md:text-base bg-purple-700 text-white rounded-lg border-2 border-gray-950 hover:bg-purple-600 transition-all duration-300"
+                                className="px-2 mr-2 w-fit md:w-28 text-sm md:text-base bg-purple-700 text-white rounded-lg border-2 border-gray-950 hover:bg-purple-600 transition-all duration-300"
                             >
                                 Subscribe Us
                             </button>

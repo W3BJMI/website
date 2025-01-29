@@ -58,7 +58,7 @@ const AboutUs = () => {
       {/* About Us Header */}
       <div className="relative text-center mb-12">
         <motion.h1
-          className="text-7xl md:text-8xl font-bold text-white"
+          className="text-6xl md:text-8xl font-bold text-white"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
@@ -66,7 +66,7 @@ const AboutUs = () => {
           About <span className="text-purple-500 ml-0.5">Us</span>
         </motion.h1>
         <motion.p
-          className="mt-4 text-lg md:text-xl px-96 text-gray-300 w-[72rem] md:w-[92rem]"
+          className="mt-4 text-base md:text-xl px-96 text-gray-300 w-[68rem] md:w-[92rem]"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.5 }}
@@ -87,7 +87,7 @@ const AboutUs = () => {
         >
           <div className="absolute w-1 bg-purple-500 h-full top-0 left-10"></div>
           <div className="relative bg-gradient-to-r from-[#2e2e2e]/50 to-[#1a1a1a]/40 rounded-3xl p-8 w-[80%] md:w-[620px] text-left shadow-lg ml-20">
-            <h3 className="text-5xl font-bold mb-4">Mission</h3>
+            <h3 className="text-4xl md:text-5xl font-bold mb-4">Mission</h3>
             <p className="text-pretty opacity-60">
               To actively engage students in the exploration and application of
               Artificial Intelligence and Blockchain technology by providing
@@ -107,7 +107,7 @@ const AboutUs = () => {
         >
           <div className="absolute w-1 bg-purple-500 h-full top-0 left-10"></div>
           <div className="relative bg-gradient-to-r from-[#2e2e2e]/50 to-[#1a1a1a]/40 rounded-3xl p-8 w-[80%] md:w-[620px] text-left shadow-lg ml-20">
-            <h3 className="text-6xl font-bold mb-4">Vision</h3>
+            <h3 className=" text-4xl md:text-5xl font-bold mb-4">Vision</h3>
             <p className="text-pretty opacity-60">
               To establish W3B as a vibrant and dynamic society where students
               are consistently involved in cutting-edge projects, leading to the

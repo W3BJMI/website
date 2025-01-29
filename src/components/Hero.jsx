@@ -85,7 +85,7 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.div
-          className="text-4xl md:text-8xl mb-4 flex flex-wrap justify-center leading-tight font-poppins"
+          className="text-3xl md:text-8xl mb-4 flex flex-wrap justify-center leading-tight font-poppins"
           initial="hidden"
           animate="visible"
           variants={{

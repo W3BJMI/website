@@ -72,7 +72,7 @@ export function CommentSection() {
 
     return (
         <div className="bg-black flex flex-col md:flex-row justify-evenly pb-28 md:pb-10 pt-40">
-            <div className="relative font-framer text-9xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
+            <div className="relative flex justify-center w-[100%] font-framer text-8xl md:text-[156px] bg-black mb-28 pb-40 md:pb-80"> 
                 <div className="absolute text-white top-0">
                     Let's
                 </div>

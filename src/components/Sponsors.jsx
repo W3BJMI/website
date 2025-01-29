@@ -50,19 +50,21 @@ export function Sponsors(){
     return (
         <section ref={sectionRef} className="bg-black text-white pt-10 pb-28">
             <div className="text-center mb-14">
-                <h2 className="text-6xl md:text-8xl font-framer font-bold text-center max-w-[100%] mb-6">
+                <h2 className="text-6xl md:text-8xl font-framer font-bold text-center max-w-[90%] mb-6">
                     {[...text1.split(" "),...text2.split(" ")].map((word, i) => (
                         <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className={`inline-block px-4 ${ text2.includes(word) ? "text-blueColor" : "" }`} >
                             {word}
                         </motion.span>
                     ))}
                 </h2>
-                <p className="mt-0 font-medium text-sm md:text-lg text-gray-400 font-sans">
-                    {text3.split(" ").map((word, i) => (
-                        <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1" >
-                            {word}
-                        </motion.span>
-                    ))}
+                <p className="mt-0 flex justify-center font-medium text-sm md:text-lg text-gray-400 font-sans w-[100%]">
+                    <div className="w-[86%]">
+                        {text3.split(" ").map((word, i) => (
+                            <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1 " >
+                                {word}
+                            </motion.span>
+                        ))}
+                    </div>
                 </p>
             </div>
 

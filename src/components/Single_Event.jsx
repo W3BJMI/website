@@ -101,10 +101,10 @@ const EventComponent = () => {
       <div className="absolute w-[400px] h-[400px] bg-purple-700 blur-3xl opacity-20 rounded-full top-[10px] left-[700px]"></div>
 
       <div className="lg:w-1/2 w-full p-8 lg:p-20">
-        <h1 className="text-6xl lg:text-8xl font-bold bg-gradient-to-b from-purple-300 to-purple-900 bg-opacity-50 bg-clip-text text-transparent">
+        <h1 className="text-5xl lg:text-8xl font-bold bg-gradient-to-b from-purple-300 to-purple-900 bg-opacity-50 bg-clip-text text-transparent">
           {eventData.event.title}
         </h1>
-        <p className="text-base lg:text-lg mt-4 max-w-xl text-white">
+        <p className="text-base lg:text-lg mt-4 max-w-[95%] text-white">
           {eventData.event.description}
         </p>
         <p className="text-lg lg:text-xl mt-4 font-semibold text-purple-600">

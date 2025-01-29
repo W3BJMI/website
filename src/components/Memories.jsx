@@ -79,8 +79,8 @@ export function Memories() {
 
     return (
         <section ref={sectionRef} className="bg-black pb-32 md:pb-[22rem] overflow-hidden">
-            <div className="flex justify-center w-full text-7xl font-bold -tracking-[0.07em] pb-3">
-                <div className="text-white text-center max-w-[95%]">
+            <div className="flex justify-center w-full text-6xl md:text-7xl font-bold -tracking-[0.07em] pb-3">
+                <div className="text-white text-center max-w-[90%]">
                     {[...text1.split(" "),...text2.split(" ")].map((word, i) => (
                         <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className={`inline-block mr-2 ${ text2.includes(word) ? "ml-2 text-blueColor" : "" }`}>
                             {word}
