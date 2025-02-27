@@ -11,6 +11,7 @@ import { CommentSection } from "./components/CommentSection";
 import { Sponsors } from "./components/Sponsors";
 import { Footer } from "./components/Footer";
 import Single_Event from "./components/Single_Event";
+import Team_Members from "./components/Team_Members";
 
 // Scroll to section if hash is present
 function ScrollToSection() {
@@ -60,6 +61,7 @@ function App() {
             <Navbar />
             <Single_Event />
           </>} />
+          <Route path="/team/:teamName" element={<Team_Members />} />
         </Routes>
       </div>
     </Router>
