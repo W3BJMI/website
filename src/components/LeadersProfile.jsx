@@ -29,7 +29,7 @@ export function LeadersProfile({ title, Name, emailId, imageUrl }) {
                     </div>
                 </div>
             </div>
-            <p className="text-2xl font-bold text-blue-900 mt-4 text-center">{title}</p>
+            <p className="text-2xl font-bold text-blue-900 mt-4 text-center">{title} </p>
         </div>
     );
   }
