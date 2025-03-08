@@ -62,7 +62,7 @@ export function Team() {
                         <div key={index} className="w-full md:min-w-[350px] text-white max-w-sm p-4 rounded-lg shadow-md text-center snap-start flex flex-col items-center">
                             {team.teamHead && (
                                 <MemberCard
-                                    designation={team.teamName}
+                                    designation={team.teamName + " Team"}
                                     name={team.teamHead.name}
                                     image={team.teamHead.profilePic}
                                 />
