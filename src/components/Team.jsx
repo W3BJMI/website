@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { MemberCard } from "./MemberCard";
 
 export function Team() {
     const [teams, setTeams] = useState([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const navigate = useNavigate();
-    const itemsPerPage = 3; // Show 3 cards per view
+    const carouselRef = useRef(null);
 
     useEffect(() => {
         const fetchTeams = async () => {
@@ -28,21 +27,20 @@ export function Team() {
         fetchTeams();
     }, []);
 
-    // Max index limit to prevent overflow
-    const maxIndex = Math.max(0, teams.length - itemsPerPage);
-
-    // Function to move left
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+    const scrollLeft = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: -500, behavior: "smooth" });
+        }
     };
 
-    // Function to move right
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    const scrollRight = () => {
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({ left: 500, behavior: "smooth" });
+        }
     };
 
     return (
-        <div className="bg-black min-h-screen p-6">
+        <div className="bg-black min-h-screen p-6 ">
             {/* Title Section */}
             <div className="ml-4 md:ml-16 text-white text-5xl md:text-7xl font-framer font-semibold">
                 <p>THE TEAM</p>
@@ -50,52 +48,42 @@ export function Team() {
             </div>
 
             {/* Teams Carousel */}
-            <div className="relative flex justify-center items-center mt-8">
-                {/* Left Arrow */}
-                <button
-                    onClick={prevSlide}
-                    className="absolute left-0 bg-white/20 text-white px-4 py-2 rounded-full hover:bg-white/40 transition text-2xl z-10"
+            <div className="relative mt-8 px-6">
+                {/* <button onClick={scrollLeft} className="absolute -left-5 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full">◀</button> */}
+                <button onClick={scrollLeft} className="absolute -left-5 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="blueColor" className="w-6 h-6"><path d="M15 5l-7 7 7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </button>
+                <div
+                    ref={carouselRef}
+                    className="flex overflow-x-auto gap-10 scrollbar-hide -left-px"
+                    style={{ scrollBehavior: "smooth" }}
                 >
-                    ←
+                    {teams.map((team, index) => (
+                        <div key={index} className="min-w-[350px] text-white max-4 p-4 rounded-lg shadow-md text-center">
+                            {team.teamHead && (
+                                <MemberCard
+                                    designation={team.teamName}
+                                    name={team.teamHead.name}
+                                    image={team.teamHead.profilePic}
+                                />
+                            )}
+                            <button
+                                onClick={() => navigate(`/team/${team.teamName}`)}
+                                className="bg-indigo-700 text-white px-4 ml-36 py-2 rounded-md hover:bg-indigo-900 transition mt-4"
+                            >
+                                View Team
+                            </button>
+                        </div>
+                    ))}
+                </div>
+                {/* <button onClick={scrollRight} className="absolute -right-5 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full">▶</button> */}
+                <button onClick={scrollRight} className="absolute -right-5 top-1/2 transform -translate-y-1/2 bg-gray-800 p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="blueColor" className="w-6 h-6">
+                        <path d="M9 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                 </button>
 
-                {/* Carousel Container */}
-<div className="overflow-x-hidden w-full max-w-5xl mx-auto">
-    <div
-        className="flex transition-transform duration-500 ease-in-out gap-x-6 px-6"
-        style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
-    >
-        {teams.map((team, index) => (
-            <div
-                key={index}
-                className="min-w-[30%] sm:min-w-[33%] flex-shrink-0 text-center p-4  rounded-lg shadow-md"
-            >
-                {team.teamHead && (
-                    <MemberCard
-                        designation={team.teamName}
-                        name={team.teamHead.name}
-                        image={team.teamHead.profilePic}
-                    />
-                )}
-                <button
-                    onClick={() => navigate(`/team/${team.teamName}`)}
-                    className="bg-indigo-700 text-white px-4 py-2 rounded-md hover:bg-indigo-900 transition mt-4"
-                >
-                    View Team
-                </button>
-            </div>
-        ))}
-    </div>
-</div>
-
-
-                {/* Right Arrow */}
-                <button
-                    onClick={nextSlide}
-                    className="absolute right-0 bg-white/20 text-white px-4 py-2 rounded-full hover:bg-white/40 transition text-2xl z-10"
-                >
-                    →
-                </button>
+ 
             </div>
         </div>
     );
