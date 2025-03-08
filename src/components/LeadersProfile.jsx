@@ -2,7 +2,7 @@
 
 export function LeadersProfile({ title, Name, emailId, imageUrl }) {
     return (
-        <div className="bg-black pt-16 flex justify-center items-center cursor-pointer">
+        <div className="bg-black pt-16 flex justify-center items-center flex-col cursor-pointer">
             {/* Card Container */}
             <div className="relative w-[300px] bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-xl overflow-hidden shadow-lg border border-blue-950">
                 {/* Image Section */}
@@ -17,9 +17,8 @@ export function LeadersProfile({ title, Name, emailId, imageUrl }) {
                 {/* Info Section */}
                 <div className="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-4">
                     <div className="text-white">
-                        <p className="text-lg font-semibold">{title}</p>
                         <p className="text-xl font-bold">{Name}</p>
-                        <p className="text-sm text-gray-300">{emailId}</p>
+                        <p className="text-sm text-gray-500">{emailId}</p>
                     </div>
   
                     {/* Icon */}
@@ -30,6 +29,7 @@ export function LeadersProfile({ title, Name, emailId, imageUrl }) {
                     </div>
                 </div>
             </div>
+            <p className="text-2xl font-bold text-blue-900 mt-4 text-center">{title}</p>
         </div>
     );
   }
