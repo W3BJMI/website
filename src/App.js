@@ -60,8 +60,13 @@ function App() {
           <Route path="/event/:id" element={<>
             <Navbar />
             <Single_Event />
+            <Footer />
           </>} />
-          <Route path="/team/:teamName" element={<Team_Members />} />
+          <Route path="/team/:teamName" element={
+            <>
+            <Navbar /><Team_Members /><Footer />
+            </>
+            } />
         </Routes>
       </div>
     </Router>
