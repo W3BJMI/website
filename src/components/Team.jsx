@@ -69,7 +69,7 @@ export function Team() {
                             )}
                             <button
                                 onClick={() => navigate(`/team/${team.teamName}`)}
-                                className="bg-indigo-700 text-white px-4 py-2 rounded-md hover:bg-indigo-900 transition mt-4 mx-auto"
+                                className="bg-blueColor text-white px-4 py-2 rounded-md hover:bg-indigo-900 transition mt-4 mx-auto"
                             >
                                 View Team
                             </button>
