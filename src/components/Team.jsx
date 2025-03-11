@@ -59,7 +59,7 @@ export function Team() {
                     style={{ scrollBehavior: "smooth", WebkitOverflowScrolling: "touch" }}
                 >
                     {teams.map((team, index) => (
-                        <div key={index} className="w-full md:min-w-[350px] text-white max-w-sm p-4 rounded-lg shadow-md text-center snap-start flex flex-col items-center">
+                        <div key={index} className="w-full md:min-w-[30%] text-white max-w-sm  p-4 rounded-lg shadow-md text-center snap-start flex flex-col items-center">
                             {team.teamHead && (
                                 <MemberCard
                                     designation={team.teamName + " Team"}
