@@ -33,10 +33,11 @@ const TeamPage = () => {
     <section className="relative bg-black text-white min-h-screen flex flex-col items-center py-10 px-5">
       {/* Team Name */}
       {/* <h1 className="text-6xl font-bold mb-10 text-center">{team.teamName}</h1> */}
-      <div className="text-gray-400 text-center text-8xl font-bold max-w-[90%] py-10">
-                    <motion.span className="inline-block mx-2 text-blueColor">{team.teamName}</motion.span>
-                    <motion.span className="inline-block mx-2 ">TEAM</motion.span>
-                </div>
+      <div className="text-gray-400 text-center font-bold max-w-[90%] py-10 px-4 break-words text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
+  <motion.span className="inline-block mx-2 text-blueColor">{team.teamName}</motion.span>
+  <motion.span className="inline-block mx-2">TEAM</motion.span>
+</div>
+
       {/* Team Details */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-10">
         
