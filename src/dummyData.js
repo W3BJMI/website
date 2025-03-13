@@ -7,6 +7,7 @@ export const memoriesImages = [
 ]
 
 export const sponsors = [
+    "https://res.cloudinary.com/dzlrsrr11/image/upload/v1741862732/Untitled_design_3_x7bqq8.png",
     "https://framerusercontent.com/images/DkCqwHPqctneXwAY78LZ1EDck.png?scale-down-to=512",
     "https://framerusercontent.com/images/n9zyJ61RzmSpFW9JM2Wpe9Lxc0.png?scale-down-to=512",
     "https://framerusercontent.com/images/RLDwBK2PNChCRZiQ0xr9ameI.png?scale-down-to=512",
