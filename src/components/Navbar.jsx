@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-const logo = "https://res.cloudinary.com/dzihypwia/image/upload/v1737871766/W3B_LOGO_r3v890.png";
+const logo = "https://res.cloudinary.com/dzlrsrr11/image/upload/v1741865480/OUYTHG_dbizto.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,9 +33,9 @@ const Navbar = () => {
           alt="W3B Logo"
           className="w-14 h-12 md:w-20"
         />
-        <div>
+{/*         <div>
           <h1 className="text-2xl md:text-4xl text-purple-500 font-semibold font-montserrat ">W3B</h1>
-        </div>
+        </div> */}
       </div>
 
       {/* Middle Section: Links */}
