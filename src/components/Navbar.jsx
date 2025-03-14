@@ -31,7 +31,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="W3B Logo"
-          className="w-14 h-12 md:w-20"
+          className="w-28 h-14 md:h-16 md:w-40"
         />
 {/*         <div>
           <h1 className="text-2xl md:text-4xl text-purple-500 font-semibold font-montserrat ">W3B</h1>

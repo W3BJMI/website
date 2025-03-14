@@ -73,6 +73,7 @@ export default function Events() {
                 const response = await fetch("https://w3b-backend-mkky.vercel.app/api/events/getEvents");
                 const data = await response.json();
                 setEventData(data);
+                console.log(data)
             } catch (error) {
                 console.error("Error fetching event data:", error);
             }
@@ -188,7 +189,7 @@ export default function Events() {
                             title={event.title}
                             description={event.description}
                             cardTitle={event.cardTitle}
-                            imageUrl={event.imageUrls}
+                            imageUrl={event.imageUrls[0]}
                             date={event.date}
                             eventid={event.eventId}
                         />

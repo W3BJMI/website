@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-const logo = "https://res.cloudinary.com/dzihypwia/image/upload/v1737871766/W3B_LOGO_r3v890.png";
+const logo = "https://res.cloudinary.com/dzlrsrr11/image/upload/v1741865480/OUYTHG_dbizto.png";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -23,15 +23,12 @@ export function Footer() {
         <div className="bg-black md:pt-11">
             <div className="flex flex-col md:flex-row justify-between pb-16">
                 <div className="mt-20 text-white ml-3 md:ml-24">
-                    <div className="flex mb-6">
+                    <div className="flex mb-2">
                         <img 
                             src={logo} 
                             alt="W3B Logo" 
-                            className="h-12 w-12"
+                            className="w-40 h-18 md:h-20 md:w-52"
                         />
-                        <div>
-                            <h1 className="text-2xl md:text-4xl text-purple-500 font-bold font-montserrat pt-2.5">W3B</h1>
-                        </div>
                     </div>
                     <div className="flex justify-between w-[96vw] md:w-[24rem] border-2 border-gray-900 h-14 rounded-lg mb-36 md:mb-0">
                         <div>

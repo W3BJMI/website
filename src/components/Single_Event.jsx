@@ -14,6 +14,7 @@ const EventComponent = () => {
         `https://w3b-backend-mkky.vercel.app/api/events/getEvent/${id}`
       );
       const eventData = response.data;
+      // console.log(eventData);
 
       const deadlineDate = new Date(eventData.formDeadline).getTime();
       const currentTime = Date.now();

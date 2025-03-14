@@ -57,7 +57,7 @@ export function Sponsors(){
                         </motion.span>
                     ))}
                 </h2>
-                <p className="mt-0 flex justify-center font-medium text-sm md:text-lg text-gray-400 font-sans w-[100%]">
+                <div className="mt-0 flex justify-center font-medium text-sm md:text-lg text-gray-400 font-sans w-[100%]">
                     <div className="w-[86%]">
                         {text3.split(" ").map((word, i) => (
                             <motion.span key={`${word}-${i}`} custom={i} variants={wordVariants} initial="hidden" animate={isInView ? "visible" : "hidden"} className="inline-block mr-1 " >
@@ -65,7 +65,7 @@ export function Sponsors(){
                             </motion.span>
                         ))}
                     </div>
-                </p>
+                </div>
             </div>
 
             <div className="text-center mb-10">
