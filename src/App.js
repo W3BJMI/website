@@ -10,8 +10,8 @@ import { Team } from "./components/Team";
 import { CommentSection } from "./components/CommentSection";
 import { Sponsors } from "./components/Sponsors";
 import { Footer } from "./components/Footer";
-import Single_Event from "./components/Single_Event";
-import Team_Members from "./components/Team_Members";
+import SingleEvent from "./components/Single_Event";
+import TeamMembers from "./components/Team_Members";
 
 // Scroll to section if hash is present
 function ScrollToSection() {
@@ -59,12 +59,12 @@ function App() {
           {/* Route for the single event page */}
           <Route path="/event/:id" element={<>
             <Navbar />
-            <Single_Event />
+            <SingleEvent />
             <Footer />
           </>} />
           <Route path="/team/:teamName" element={
             <>
-            <Navbar /><Team_Members /><Footer />
+            <Navbar /><TeamMembers /><Footer />
             </>
             } />
         </Routes>

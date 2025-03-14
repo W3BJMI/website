@@ -5,8 +5,10 @@ import { LeadersProfile } from "./LeadersProfile";
 import { motion } from "framer-motion";
 
 export function Leaders() {
+    // eslint-disable-next-line
     const [isInView, setIsInView] = useState(false);
     const sectionRef = useRef(null);
+    // eslint-disable-next-line
     const [facultyAdvisor, setFacultyAdvisor] = useState(null);
     const [president, setPresident] = useState(null);
     const [vicePresident, setVicePresident] = useState(null);

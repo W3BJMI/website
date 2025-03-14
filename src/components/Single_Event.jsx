@@ -144,7 +144,7 @@ const EventComponent = () => {
         <div className="w-80 h-80 bg-gradient-to-b from-purple-300 to-purple-500 rounded-lg shadow-2xl overflow-hidden">
           <img
             src={eventData.event.imageUrls[currentIndex]}
-            alt={`Event Image ${currentIndex + 1}`}
+            alt={`Event_Image ${currentIndex + 1}`}
             className="w-full h-full object-cover transition-all duration-500"
           />
         </div>
